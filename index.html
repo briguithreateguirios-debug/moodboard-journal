@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moodboard Journal</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconos FontAwesome (local) -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="main container">
+
+        <!-- =========================
+             BARRA SUPERIOR
+        ========================== -->
+
+        <header class="topbar">
+
+            <div class="container-arrows">
+
+                <button class="container-arrow-left" aria-label="Volver">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button class="container-arrow-right" aria-label="Avanzar">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="buttons-user">
+
+                <button class="btn-register">
+                    Explorar
+                </button>
+
+                <button class="btn-login btn-full" id="btnPerfil">
+                    Mi perfil
+                </button>
+
+              <div class="profile-modal" id="profileModal" style="display: none;">
+    <div class="profile-box">
+        <button class="close-profile" id="closeProfile">×</button>
+
+        <h2>Mi perfil</h2>
+
+        <p>👤 <strong id="profileName"></strong></p>
+        <p>📧 <span id="profileEmail"></span></p>
+
+        <button class="logout-btn" id="logoutBtn">
+            Cerrar sesión
+        </button>
+      
+    </div>
+</div>
+
+            </div>
+
+        </header>
+
+      <!-- =========================
+           FORMULARIO DE REGISTRO
+       ========================== -->
+<div class="register-modal" id="registerModal">
+   <div class="register-box">
+        <button class="close-register" id="closeRegister">
+            ×
+        </button>
+
+        <h2>Crear cuenta</h2>
+
+        <p>Registrate para guardar tu experiencia en Moodboard.</p>
+
+        <form id="registerForm">
+
+            <label for="registerName">
+                Nombre
+            </label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Tu nombre"
+                required
+            >
+
+            <label for="registerEmail">
+                Correo
+            </label>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="tu correo"
+                required
+            >
+
+            <label for="registerPassword">
+                Contraseña
+            </label>
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Crea una contraseña"
+                required
+            >
+
+            <button type="submit" class="register-submit">
+                Registrarse
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+        <!-- =========================
+             BARRA LATERAL
+        ========================== -->
+
+        <nav class="navbar">
+
+            <!-- LOGO -->
+
+            <div class="container-logo">
+
+                <a href="#" class="link-logo">
+
+                    <img
+                        src="img/logo.jpg"
+                        alt="Moodboard Journal"
+                        class="logo-img"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <ul class="nav-main">
+
+                <li>
+
+                    <a href="#" class="nav-link active">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Inicio
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#buscar" class="nav-link">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Buscar
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#categorias" class="nav-link">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        Categorías
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#favoritos" class="nav-link">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        Mis favoritos
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <!-- CATEGORÍAS -->
+
+            <div class="extra-options">
+
+                <p class="sidebar-title">
+                    Explorar
+                </p>
+
+
+                <button class="btn-category">
+
+                    <i class="fa-solid fa-music"></i>
+
+                    Música
+
+                </button>
+
+
+                <button class="btn-category">
+
+                    <i class="fa-solid fa-shirt"></i>
+
+                    Moda
+
+                </button>
+
+
+                <button class="btn-category">
+
+                    <i class="fa-solid fa-film"></i>
+
+                    Anime
+
+                </button>
+
+
+                <button class="btn-category">
+
+                    <i class="fa-solid fa-compact-disc"></i>
+
+                    Álbumes
+
+                </button>
+
+            </div>
+
+
+            <!-- ENLACES -->
+
+            <div class="container-links">
+
+                <div class="container-links-legal">
+
+                    <a href="#">
+                        Acerca del proyecto
+                    </a>
+
+                    <a href="#">
+                        Privacidad
+                    </a>
+
+                    <a href="#">
+                        Contacto
+                    </a>
+
+                </div>
+
+
+                <button class="btn-language">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Español
+
+                </button>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =========================
+             CONTENIDO PRINCIPAL
+        ========================== -->
+
+        <section class="main-content">
+
+
+            <!-- PRESENTACIÓN -->
+
+            <section class="hero">
+
+                <p class="hero-small">
+                    TU REVISTA DIGITAL
+                </p>
+
+
+                <h1 class="titulo-moodboard">
+                    Moodboard Journal
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Un espacio para descubrir música,
+                    moda, anime y nuevas inspiraciones.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- =========================
+                 BUSCADOR
+            ========================== -->
+
+            <section class="search-section" id="buscar">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar artistas, álbumes, anime..."
+                    >
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CATEGORÍAS
+            ========================== -->
+
+            <section id="categorias" class="categories-section">
+
+                <h2 class="section-title">
+                    Explora por categoría
+                </h2>
+
+
+                <div class="categories-container">
+
+
+                    <button
+                        class="category-card"
+                        data-category="musica"
+                    >
+
+                        <i class="fa-solid fa-music"></i>
+
+                        <span>Música</span>
+
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="moda"
+                    >
+
+                        <i class="fa-solid fa-shirt"></i>
+
+                        <span>Moda</span>
+
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="anime"
+                    >
+
+                        <i class="fa-solid fa-film"></i>
+
+                        <span>Anime</span>
+
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="albumes"
+                    >
+
+                        <i class="fa-solid fa-compact-disc"></i>
+
+                        <span>Álbumes</span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CONTENIDO DESTACADO
+            ========================== -->
+
+            <section class="content-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            DESTACADO
+                        </p>
+
+                        <h2 class="title-playlist">
+                            Descubre algo nuevo
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-grid">
+
+
+                    <!-- TARJETA 1 -->
+
+                   <article
+                        class="content-card"
+                        data-category="musica"
+                        data-id="1"
+                        id="musicaCard"
+                   >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/concentracion/peacefulpiano.jpg"
+                                alt="Música y piano"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                MÚSICA
+                            </span>
+
+                            <h3>
+                                Sonidos para perderte
+                            </h3>
+
+                            <p>
+                                Descubre artistas y canciones
+                                para acompañar tus momentos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TARJETA 2 -->
+                  
+                      <article
+                           class="content-card"
+                           data-category="anime"
+                           data-id="2"
+                           id="animeCard"
+                      >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/moodboard playlists/all out.jpg"
+                                alt="Anime recomendado"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                ANIME
+                            </span>
+
+                            <h3>
+                                Historias que tienen música
+                            </h3>
+
+                            <p>
+                                Animes recomendados con
+                                bandas sonoras que destacan.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TARJETA 3 -->
+
+                    <article 
+                      class="content-card"
+                      data-category="moda"
+                      data-id="3"
+                      id="modaCard"
+                    >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/moodboard playlists/chill hits.jpg"
+                                alt="Outfit inspirado en música"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                MODA
+                            </span>
+
+                            <h3>
+                                Outfits con personalidad
+                            </h3>
+
+                            <p>
+                                Ideas de looks inspirados
+                                en artistas y diferentes estilos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TARJETA 4 -->
+
+                    <article
+                        class="content-card"
+                        data-category="albumes"
+                        data-id="4"
+                        id="albumCard"
+                    >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/moodboard playlists/rock classics.jpg"
+                                alt="Álbum recomendado"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                ÁLBUMES
+                            </span>
+
+                            <h3>
+                                Portadas que inspiran
+                            </h3>
+
+                            <p>
+                                Álbumes recomendados por su
+                                música y estética visual.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 MÚSICA
+            ========================== -->
+
+            <section class="content-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            MÚSICA
+                        </p>
+
+                        <h2 class="title-playlist">
+                            Artistas para descubrir
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-grid">
+
+
+                    <article
+                        class="content-card card-musica"
+                        data-category="musica"
+                        data-id="5"
+                    >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/concentracion/deep focus.jpg"
+                                alt="Artista musical"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                ARTISTA
+                            </span>
+
+                            <h3>
+                                Nuevos sonidos
+                            </h3>
+
+                            <p>
+                                Explora artistas y estilos
+                                que pueden convertirse en tus favoritos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="content-card playlist-creativa"
+                        data-category="musica"
+                        data-id="6"
+                    >
+
+                        <div class="card-img">
+
+                            <img
+                                src="img/concentracion/focus flow.jpg"
+                                alt="Playlist musical"
+                            >
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                PLAYLIST
+                            </span>
+
+                            <h3>
+                                Para escuchar mientras creas
+                            </h3>
+
+                            <p>
+                                Música para dibujar, estudiar
+                                o simplemente dejarte llevar.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="content-card sonidos-alternativos"
+                        data-category="musica"
+                        data-id="7"
+                    >
+
+                        <div class="card-img">
+
+                            <img
+    src="img/concentracion/coding mode.jpg"
+    alt="Jazz y música instrumental"
+>
+
+                        </div>
+
+
+                        <div class="card-info">
+
+                            <span class="card-category">
+                                ESTILO
+                            </span>
+
+                            <h3>
+                                Sonidos alternativos
+                            </h3>
+
+                            <p>
+                                Una selección de sonidos
+                                diferentes para explorar.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CANCIONES
+            ========================== -->
+
+            <section
+                class="content-section music-gallery-section"
+                id="canciones"
+                style="display: none;"
+            >
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            MÚSICA
+                        </p>
+
+                        <h2 class="title-playlist">
+                            Canciones para descubrir
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                  <div class="content-grid" id="musicContainer">
+               </div>
+            </section>
+
+          <!-- =========================
+                 ANIME
+              ========================== -->
+
+<section class="content-section">
+
+    <div class="section-heading">
+        </div>
+
+    </div>
+
+
+    <div class="content-grid"
+      
+       </div>
+  
+            </section>
+
+
+<section class="content-section outfits-section" id="outfitsModa" style="display: none;">
+    <div class="section-heading">
+        <div>
+            <p class="section-label">MODA</p>
+            <h2 class="title-playlist">Outfits para inspirarte</h2>
+        </div>
+    </div>
+
+    <div class="content-grid" id="outfitsContainer"></div>
+</section>
+
+          <!-- =========================
+               GALERÍA DE ANIME
+         ========================= -->
+
+        <section
+           class="content-section anime-gallery-section"
+           id="animeGallery"
+           style="display: none;"
+        >
+          
+              <div class="section-heading">
+                
+                 <div>
+                   
+                    <p class="section-label">ANIME</p>
+                  <h2 class="title-playlist">Animes para descubrir</h2>
+                  </div>
+                
+            </div>
+
+             <div class="content-grid" id="animeContainer"></div>
+       </section>
+
+<!-- =========================
+     GALERÍA DE ÁLBUMES
+========================= -->
+
+<section
+    class="content-section albums-gallery-section"
+    id="albumsGallery"
+    style="display: none;"
+>
+    <div class="section-heading">
+        <div>
+            <p class="section-label">MÚSICA</p>
+            <h2 class="title-playlist">Álbumes para descubrir</h2>
+        </div>
+    </div>
+
+    <div class="content-grid" id="albumsContainer"></div>
+</section>
+
+          
+            <!-- =========================
+                 FAVORITOS
+            ========================== -->
+
+            <section
+                class="content-section favorites-section"
+                id="favoritos"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            TU ESPACIO
+                        </p>
+
+                        <h2 class="title-playlist">
+                            Mis favoritos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="favoritesContainer">
+
+                    <p class="empty-message">
+                        Todavía no agregaste favoritos.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="footer">
+
+            <div class="container-links-footer">
+
+
+                <div class="links-footer">
+
+                    <h3>
+                        Moodboard Journal
+                    </h3>
+
+                    <a href="#">
+                        Sobre el proyecto
+                    </a>
+
+                    <a href="#">
+                        Contacto
+                    </a>
+
+                </div>
+
+
+                <div class="links-footer">
+
+                    <h3>
+                        Explorar
+                    </h3>
+
+                    <a href="#buscar">
+                        Buscar
+                    </a>
+
+                    <a href="#categorias">
+                        Categorías
+                    </a>
+
+                    <a href="#favoritos">
+                        Favoritos
+                    </a>
+
+                </div>
+
+
+                <div class="links-footer">
+
+                    <h3>
+                        Categorías
+                    </h3>
+
+                    <a href="#">
+                        Música
+                    </a>
+
+                    <a href="#">
+                        Moda
+                    </a>
+
+                    <a href="#">
+                        Anime
+                    </a>
+
+                    <a href="#">
+                        Álbumes
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Moodboard Journal
+                </p>
+
+                <p>
+                    Música · Moda · Anime · Inspiración
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
